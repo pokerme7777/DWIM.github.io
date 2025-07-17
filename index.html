@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script src="./static/js/distill_template.v2.js"></script>
+
+
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://d3js.org/d3-collection.v1.min.js"></script>
+        <script src="https://rawgit.com/nstrayer/slid3r/master/dist/slid3r.js"></script>
+
+        <script defer="" src="./static/js/hider.js"></script>
+        <script src="./static/js/image_interact.js"></script>
+        <script src="./static/js/switch_videos.js"></script>
+
+        <link rel="stylesheet" href="./static/css/style.css">
+        <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+        <script defer src="./static/js/fontawesome.all.min.js"></script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>  <!-- jquery -->
+        <script defer src="./static/js/medium-zoom.min.js"></script>
+        <script defer src="./static/js/zoom.js"></script>
+    </head>
+    <body>
+        <div class="header-wrapper">
+            <div class="header-container" id="header-container">
+                <div class="header-content">
+                    <h1 style="margin-top: 0px"><i>DWIM</i>: Towards Tool-aware Visual Reasoning</h1>
+                    <p style="color: #FFF7D4">
+                        An open-source framework for training
+                        <em><strong style="color: #ffe099">tool-aware LLM agents</strong></em>.
+                        Train practical LLM agents by 
+                        <em><strong>identifying tool failures</strong></em>
+                        and learning from <em><strong>effective actions</strong></em> through 
+                        <em><strong style="color: #ffe099">DW-(Discrepancy-aware Workflows genteration)</strong></em>
+                        and 
+                        <em><strong style="color: #ffe099">IM-(Instruct-Masked tuning)</strong></em>.
+
+                    </p>
+                    <div class="button-container">
+                        <a href="https://arxiv.org/abs/2503.19263" class="button paper-link" target="_blank">
+                            <span class="icon is-small">
+                                <i class="ai ai-arxiv"></i>
+                            </span>
+                            arXiv
+                        </a>
+                        <!-- <a href="./static/DWIM.pdf" class="button paper-link" target="_blank">
+                            <span class="icon is-small">
+                                <i class="fas fa-file-pdf"></i>
+                            </span>
+                            <span>pdf</span>
+                        </a> -->
+                        <a href="https://github.com/pokerme7777/DWIM" class="button" target="_blank">
+                            <span class="icon is-small">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span>Code</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="header-image">
+                    <img src="static/img/group_monster.png" alt="Teaser Image" class="teaser-image"> <!-- pending -->
+                </div>
+            </div>
+        </div>
+    <d-article>
+        <div class="byline">
+            <div class="byline-container">
+                <div class="byline-column">
+                    <h3>Authors</h3>
+                    <p><a href="https://scholar.google.com/citations?user=HOMJ178AAAAJ&hl=en" class="author-link" target="_blank">Fucai Ke</a> <sup>✧</sup><sup>★</sup></p>
+                    <p><a href="https://scholar.google.com/citations?user=sKd9ylYAAAAJ&hl=en" class="author-link" target="_blank">Vijay Kumar B G</a> <sup>△</sup></p>
+                    <p><a href="https://scholar.google.com/citations?user=GQzvqS4AAAAJ&hl=en" class="author-link" target="_blank">Xingjian Leng</a> <sup>▣</sup></p>
+                    <p><a href="https://scholar.google.com/citations?user=-rpiDIoAAAAJ&hl=en" class="author-link" target="_blank">Zhixi Cai</a> <sup>★</sup></p>
+                    <p><a href="https://scholar.google.com/citations?user=uXXocfgAAAAJ&hl=en" class="author-link" target="_blank">Zaid Khan</a> <sup>◎</sup></p>
+                    <p><a href="https://scholar.google.com/citations?user=jCziD10AAAAJ&hl=en" class="author-link" target="_blank">Weiqing Wang</a> <sup>★</sup></p>
+                    <p><a href="https://scholar.google.com/citations?user=zvNKqskAAAAJ&hl=en" class="author-link" target="_blank">Pari Delir Haghighi</a> <sup>★</sup></p>
+                    <p><a href="https://scholar.google.com/citations?user=VxAuxMwAAAAJ&hl=en" class="author-link" target="_blank">Hamid Rezatofighi</a> <sup>★</sup></p>
+                    <p><a href="https://scholar.google.com/citations?user=Ja-8AFsAAAAJ&hl=en" class="author-link" target="_blank">Manmohan Chandraker</a> <sup>△</sup><sup>□</sup></p>
+                </div>
+                <div class="byline-column">
+                    <h3>Affiliations</h3>
+                    <p>
+                        <sup>✧</sup>
+                        <a href="https://building4pointzero.org/" class="affiliation-link" target="_blank">Building 4.0 CRC</a>
+                    </p>
+                    <p>
+                        <sup>★</sup>
+                        <a href="https://www.monash.edu/it" class="affiliation-link" target="_blank">Monash University</a>
+                    </p>
+                    <p>
+                        <sup>△</sup>
+                        <a href="https://www.nec-labs.com/" class="affiliation-link" target="_blank">NEC Labs America</a>
+                    </p>
+                    <p>
+                        <sup>▣</sup>
+                        <a href="https://www.anu.edu.au/" class="affiliation-link" target="_blank">The Australian National University</a>
+                    </p>
+                    <p>
+                        <sup>◎</sup>
+                        <a href="https://www.unc.edu/" class="affiliation-link" target="_blank">The University of North Carolina at Chapel Hill</a>
+                    </p>
+                    <p>
+                        <sup>□</sup>
+                        <a href="hhttps://ucsd.edu/" class="affiliation-link" target="_blank">University of California San Diego</a>
+                    </p>
+                </div>
+                <div class="byline-column">
+                    <h3>Date</h3>
+                    <p>
+                        Jul 18<sup>th</sup>, 2025
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="l-page video-container" style="margin-left: 4%; margin-bottom: 20px">
+            <iframe width="560" height="315" src="https://www.youtube.com/watch?v=TJhJTfpAG7g" title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            <figcaption style="text-align: center">(Best viewed in 4K)</figcaption>
+        </div>
+
+        <p class="text abstract">
+            Compositional Visual Reasoning (CVR), vital for human-like visual understanding in diverse applications, 
+            faces significant challenges due to the complexity of tasks and <span style="color: #FF5733; font-weight: bold;">potential tool failures</span> in agent frameworks. 
+            Conventional approaches using frozen large language models (LLMs) lack tool awareness, leading to suboptimal performance <span style="color: #C70039; font-weight: bold;">
+            especially when tools produce errors</span>. To address this, we propose <strong>DWIM</strong>, 
+            a novel framework that enhances tool-aware visual reasoning through <em>discrepancy-aware workflow generation</em>, 
+            which identifies and mitigates tool failures by refining actions (see <a href="#dw-methodology">§DW</a>). 
+            Additionally, DWIM introduces an innovative <em>instruct-masking fine-tuning</em> method, <span style="color: #900C3F; font-weight: bold;">training agentic LLMs on workflow-based data</span>
+            to improve tool utilization and reasoning efficiency (see <a href="#im-methodology">§IM</a>). Our experiments, detailed in <a href="#experiments">§Experiments</a>, 
+            demonstrate state-of-the-art performance across multiple VR datasets, highlighting DWIM's robust generalization and reduced reliance on manual prompt engineering.
+        </p>
+
+
+        <div id="dw-methodology">
+            <div class="l-screen grey-overlay"></div>
+            <h1 class="text"><i>DW:</i> Discrepancy-away training Workflow generation</h1>
+            <p class="text">
+                In <strong>Discrepancy-aware Workflow Generation (DW)</strong>, we address the challenge of inaccurate tool outputs in agent frameworks. 
+                When tool executions feedback produce potentially unreliable results, conditioning on the ground-truth label
+                enables the <span style="color: #FF5733; font-weight: bold;">LLM to be prompted to identify discrepancies</span> 
+                between environmental feedback and the expected outcome, such as factual errors from tool failures. 
+                Upon detecting such conflicts, the <span style="color: #C70039; font-weight: bold;">LLM generates a <em>Rethink</em> action</span>
+                which includes a natural language description of the discrepancy and proposes an alternative action as the next step.
+                This approach enhances the robustness and adaptability of agent workflows, as demonstrated in our experiments (see <a href="#experiments">§Experiments</a>).
+            </p>
+            <p class="text">
+                In the data collection process, standard methods struggle to produce workflows that are both logically feasible and practically executable, 
+                as <span style="color: #900C3F; font-weight: bold;">tools may return erroneous outputs</span>, 
+                leading to workflows that are theoretically sound but fail in practice. Our approach enables the <span style="color: #FF5733; font-weight: bold;">
+                    LLM to compare actual feedback with the ground-truth label to check each step</span>, and upon detecting discrepancies, 
+                    <span style="color: #C70039; font-weight: bold;">generates a <em>Rethink</em> action to articulate the issue and propose a revised action.
+            </p>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <img src="/static/img/workflow_generation.png" alt="Discrepancy-aware Workflow Generation" style="display: block; margin: 0 auto; max-width: 100%;">
+            </div>
+        </div>
+
+
+
+        <div id="action-flagging">
+            <div class="l-screen grey-overlay"></div>
+            <h1 class="text">Action Flagging</h1>
+            <p class="text">
+            Action Flagging employs a <span style="color: #FF5733; font-weight: bold;">rule-based approach to evaluate environment feedback and detect erroneous tool usage</span>, 
+            such as Python code that cannot be executed due to errors generated by the agent. 
+            Additionally, it identifies actions that are executable but ineffective for solving the task or logically feasible actions that fail due to 
+            <span style="color: #C70039; font-weight: bold;">tool limitations</span>. 
+            These are classified as <span style="color: #900C3F; font-weight: bold;">ineffective actions</span>, 
+            while others are labeled as effective actions. This distinction facilitates subsequent training by masking only effective actions.
+            </p>
+            <div style="text-align: center; margin-top: 20px;">
+                <img src="/static/img/Action-Flagging.png" alt="Alction-flagging" style="display: block; margin: 0 auto; max-width: 60%;">
+            </div>
+        </div>
+
+
+
+        <div id="im-methodology">
+            <div class="l-screen grey-overlay"></div>
+            <h1 class="text"><i>IM:</i> Instruct-Masking Fine Tuning</h1>
+            <p class="text">
+                Subsequently, <span style="color: #FF5733; font-weight: bold;">each effective action is masked and the LLM is instructed to reproduce it iteratively</span>.
+                The <span style="color: #C70039; font-weight: bold;">loss is computed between the original and the LLM-generated action, 
+                allowing the model to focus on learning effective tool usage and planning strategies</span>, rather than memorizing noisy workflows. 
+                In contrast to BERT's token-level masking, we <span style="color: #900C3F; font-weight: bold;">mask actions at the semantic level</span>, 
+                instead of token level. The instruct approach, which can enhance the model's understanding of workflow dynamics, is inspired by instruction-tuning and incorporates the concept of an end-of-sequence token.
+            </p>
+            <div style="text-align: center; margin-top: 20px;">
+                <img src="/static/img/method.png" alt="Table2" style="display: block; margin: 0 auto; max-width: 100%;">
+            </div>
+        </div>
+
+        
+
+        <div id="experiments">
+            <div class="l-screen grey-overlay"></div>
+            <h1 class="text">Experiments Results</h1>
+            
+            <div id="quantitative-analysis">
+                <h2 class="text">Quantitative Analysis</h2>
+                <div id="table2">
+                    <h3 class="text">Comparison of average performance across six datasets</h3>
+                    <p class="text">
+                    We use * to highlight the second high score. For all E2E methods, we present their results in grey as they serve as reference points but are not compositional visual reasoning methods and are not intended as direct comparison targets. Shots means the number of provided in-context learning examples. 
+                    </p>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <img src="/static/img/table2.png" alt="Table3" style="display: block; margin: 0 auto; max-width: 100%;">
+                    </div>
+                </div>
+                
+                <div id="table3">
+                    <h3 class="text">Cross-dataset generalization ability study. </h3>
+                    <p class="text">
+                        We use the checkpoint trained on the GQA training set to test models on other datasets. Results for all E2E methods and frozen agentic LLMs are shown in grey as reference points; these models are neither compositional nor trained and are not intended for direct comparison.
+                    </p>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <img src="/static/img/table3.png" alt="Discrepancy-aware Workflow Generation" style="display: block; margin: 0 auto; max-width: 100%;">
+                    </div>
+                </div>
+
+                <div id="table4">
+                    <h3 class="text">Dependence on Task-Specific Tool Libraries. </h3>
+                    <p class="text">
+                        In this experiment, we train and evaluate all compositional methods using a complete tool library instead of a task-specific one on two tasks to examine their dependence on designed tool libraries.
+                    </p>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <img src="/static/img/table4.png" alt="Table4" style="display: block; margin: 0 auto; max-width: 100%;">
+                </div>
+            </div>
+            
+            <div id="ablation_study">
+                <h2 class="text">Ablation Study</h2>
+                <div id="table5">
+                    <h3 class="text">Effectiveness of the proposed training workflow generation</h3>
+                    <p class="text">
+                        In this study, we investigate the impact of discrepancy-aware training workflow generation on data utilization. Data utilization refers to the proportion of training data points that can generate workflows yielding correct results and are suitable for training. 
+                    </p>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <img src="/static/img/table5.png" alt="Table5" style="display: block; margin: 0 auto; max-width: 100%;">
+                </div>
+
+                <div id="table6">
+                    <h3 class="text">Effectiveness of Instruct-Masking Fine-tuning</h3>
+                    <p class="text">
+                        We examine the effectiveness of the instruct-masking fine-tuning method compared to SFT. instruct-masking exhibits a clear advantage over both Random-Masking and Masking-W-Rethink. Random-Masking indiscriminately masks actions rather than selectively targeting correct actions within the workflow, while Masking-W-Rethink masks both effective actions and ineffective actions that trigger ``Rethink."
+                    </p>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <img src="/static/img/table6.png" alt="Table6" style="display: block; margin: 0 auto; max-width: 100%;">
+                </div>
+
+                <div id="table7">
+                    <h3 class="text">Experiment Using Various LLM Backbones for DWIM</h3>
+                    <p class="text">
+                        we apply DWIM to various open-source models (e.g., LLaMa-3.1-8B, Mistral-v0.2/0.3-7B, and three Qwen2.5 variants), and compare their performance to frozen LLMs with 10-shot in-context learning.
+                    </p>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <img src="/static/img/table7.png" alt="Table7" style="display: block; margin: 0 auto; max-width: 100%;">
+                </div>
+            </div>
+            
+        </div>
+
+
+        </d-article>
+        
+        <div class="block-bg-5">
+            
+            <div class="block-content">
+                <h2 class="text">BibTex</h2>
+                <pre><code>@article{ke2025dwim,
+                title={{DWIM: Towards Tool-aware Visual Reasoning via Discrepancy-aware Workflow Generation & Instruct-Masking Tuning}},
+                author={Ke, Fucai and Leng, Xingjian and Cai, Zhixi and Khan, Zaid and Wang, Weiqing and Haghighi, Pari Delir and Rezatofighi, Hamid and Chandraker, Manmohan and others},
+                year={2025},
+                journal={arXiv preprint arXiv:2503.19263},
+                }</code></pre>
+            </div>
+        </div>
+        
+        </script>
+    </body>
+</html>
